@@ -26,6 +26,6 @@ Compile your project with the following flags:
 -L libft -l ft -I libft/includes/
 ```
 Include in your project:
-```C
-include "libft.h"
+```c
+#include "libft.h"
 ```
