@@ -91,19 +91,19 @@ LOG_WHITE		= \033[1;37m
 all: $(NAME)
 
 .c.o: $(SRC)
-	@ $(CC) -I $(INCLUDE_DIR) -c $< -o $@
+	$(CC) -I $(INCLUDE_DIR) -c $< -o $@
 
 $(NAME): $(OBJ)
-	@ ar rc $(NAME) $(OBJ)
-	@ ranlib $(NAME)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 	@ echo "[+] $(LOG_VIOLET)[$(NAME)]$(LOG_NOCOLOR) compiled"
 
 clean:
-	@ /bin/rm -f $(OBJ)
+	/bin/rm -f $(OBJ)
 	@ echo "[+] $(LOG_VIOLET)[$(NAME)]$(LOG_NOCOLOR) .o files deleted"
 
 fclean: clean
-	@ /bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 	@ echo "[+] $(LOG_VIOLET)[$(NAME)]$(LOG_NOCOLOR) binary file deleted"
 
 re: fclean all
